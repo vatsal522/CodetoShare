@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	int a[20][20],i,j,k,n,v,mincost=0,temp=0,tree[20][20],nr[20],l,x;
+	clrscr();
+	printf("Enter no if vertices: ");
+	scanf("%d",&n);
+	printf("Enter the Adjacency Matrix: ");
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("Enter the Starting Vertex:- ");
+	scanf("%d",&v);
+	temp=a[v][0];
+	for(i=1;i<n;i++)
+	{
+		if(a[v][i]<temp)
+		{
+			k=v;
+			l=i;
+			temp=a[v][i];
+		}
+		tree[0][0]=k;
+		tree[0][1]=l;
+		tree[0][2]=temp;
+		mincost=temp;
+		nr[k]=nr[l]=100;
+		for(i=0;i<n;i++)
+		{
+			if(a[k][i]<a[l][i])
+				nr[i]=k;
+			else
+				nr[i]=l;
+		}
+	}
+
+
+	for(i=1;i<n;i++)
+	{
+		temp=100;
+		for(j=0;j<n;j++)
+		{
+			if(a[j][nr[j]]<temp && nr[j]!=100)
+			{
+				x=j;
+				temp=a[j][nr[j]];
+			}
+		}
+		tree[i][0]=x;
+		tree[i][1]=nr[x];
+		tree[i][2]=temp;
+		mincost=mincost + temp;
+		nr[x]=nr[nr[x]]=100;
+		for(j=0;j<n;j++)
+		{
+			if(a[j][nr[j]]>a[j][x] && nr[j]!=100)
+					nr[j]=x;
+		}
+		printf("\nmincost=%d",mincost);
+	}
+	printf("\nTOTAL MINCOST= %d ",mincost);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			printf("%d",tree[i][j]);
+		}
+		printf("\n");
+	}
+	getch();
+	}
+
+
+
+
+
+
+
+
