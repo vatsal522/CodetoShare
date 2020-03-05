@@ -1,0 +1,60 @@
+<html>
+    <title>
+CALC
+    </title>
+    <head>
+        <style>
+        
+        body{
+            text-align:center;
+            color:black;
+            background-image:linear-gradient(lightblue,darkblue);
+            height:100%;
+
+        }
+        
+        
+        </style>
+
+        <script type="text/javascript" src="q2.js"> 
+		
+		//function dis(x){ frm.txt.value+=x; }
+
+		</script>
+
+    </head>
+    <body>
+        <h1>Simple Calculator</h1>
+        <form name="frm">
+            <input type="text" name="txt" disabled><br><br>
+            <input type="button" name="btn7" value="7" onclick="dis(7)">
+            <input type="button" name="btn8" value="8" onclick="dis(8)">
+            <input type="button" name="btn9" value="9" onclick="dis(9)">
+            <input type="button" name="btnp" value="+" onclick="dis('+')"><br><br>
+
+            <input type="button" name="btn4" value="4" onclick="dis(4)">
+            <input type="button" name="btn5" value="5" onclick="dis(5)">
+            <input type="button" name="btn6" value="6" onclick="dis(6)">
+            <input type="button" name="btnm" value="-" onclick="dis('-')"><br><br>
+
+            <input type="button" name="btn1" value="1" onclick="dis(1)">
+            <input type="button" name="btn2" value="2" onclick="dis(2)">
+            <input type="button" name="btn3" value="3" onclick="dis(3)">
+            <input type="button" name="btnmul" value="*" onclick="dis('*')"><br><br>
+
+            <input type="button" name="btndot" value="." onclick="dis('.')">
+            <input type="button" name="btn0" value="0" onclick="dis(0)">
+            <input type="button" name="btneq" value="=" onclick="txt.value=eval(txt.value)">
+            <input type="button" name="btnd" value="/" onclick="dis('/')"><br><br>
+
+            <input type="reset" name="RESET" value="RESETTT!">
+
+
+
+        </form>
+    
+
+
+
+    </body>
+</html>

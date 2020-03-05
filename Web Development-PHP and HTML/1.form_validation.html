@@ -1,0 +1,91 @@
+<html>
+<title> REGIS FORM </title>
+<head>
+        <script type="text/javascript">
+
+            function myFunc(form)
+            {
+                
+                if(form.uname.value=="" )
+                {
+                alert("Username is empty");
+                uname.focus();
+                
+                }
+
+
+                else if(form.pwd.value=="" )
+                {
+                alert("Password is empty");
+                    form.pwd.focus();
+                }
+
+
+            }
+            
+            
+            </script>
+            
+<style type="text/css">
+
+#hi{
+    text-align: center;
+    color:black;
+    background-image: linear-gradient(lightblue,darkblue);
+    height: 100%;
+}
+
+
+
+
+</style>
+
+</head>
+<body id="hi">
+<h1  >REGISTRATION FORM</h1>
+<form name="f1"   > 
+Username*: <input  type="text" name="uname" placeholder="Username" ><br>
+Password*: <input type="password" name="pwd" placeholder="Password"><br>
+Firstname*: <input type="text" name="fname" placeholder="Firstname" required > <br>
+Lastname*: <input type="text" name="lname" placeholder="Lastname"><br>
+Gender*: <select>
+<option value='MALE'>MALE</option>
+<option value='FEMALE'>FEMALE</option>
+<option value='OTHER'>OTHER</option>
+</select><br>
+Marital Status*: <select>
+    <option value="MARRIED">MARRIED</option>
+    <option value="UMMARRIED">UNMARRIED</option>
+</select><br>
+DOB*: <input type="date" name="date" value="1999-08-30"><br>
+Occupation*:<select>
+    <option value="SERVICE">SERVICE</option>
+    <option value="BUSSINESS">BUSSINESS</option>
+    <option value="STUDENT">STUDENT</option>
+</select><br>
+Email*:<input type="text" name="email" placeholder="Email"><br>
+Mobile Number*:<input type="number" name="num" placeholder="Mobile"><br>
+Address*:<input type="text" name="addr" placeholder="Address"><br>
+State*:<input type="text" name="state" placeholder="State"><br>
+Country*:<input type="text" name="country" placeholder="Country"><br>
+Pin/Zip*:<input type="number" name="pincode" placeholder="Pincode"><br>
+
+<h3>CARD DETAILS</h3>
+Name on the card:<input type="text" name="cname"><br>
+Card Type:<select>
+    <option value="DEBIT">DEBIT CARD</option>
+    <option value="CREDIT">CREDIT CARD</option>
+</select><br>
+CVV:<input type="password" name="cvv"><br>
+CARDNUMBER:<input type="text" name="cardnumber"><br>
+
+
+
+<input type="submit"  value="REGISTER!" onclick="myFunc(f1);">
+<input type="reset" value="RESETTTTTT">    
+</form>
+</body>
+
+
+
+</html>

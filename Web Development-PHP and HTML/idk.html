@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE> JavaScript Dialog Boxes </TITLE>
+<SCRIPT TYPE="TEXT/JAVASCRIPT">
+
+function Validate()
+{
+var a=document.MyForm.First_Name.value;
+if(a == '')
+	alert("Be Alert! First Name Can not be Blank");    //Display alert box
+}
+
+function ShowPrommptBox() 
+{
+	var city = document.MyForm.city.value;
+	var x, Message;
+	if(city=='')
+	{
+		city=prompt("Prompt Box Says ... .Please Enter the Vaild City Name", "Mumbai"); // Display Prompt Box
+		if(city == null || city == '')
+		{
+			Message = "User Left this field blank";
+		}
+		else
+		{
+			Message = "Good!" + city + " is a beautiful city!";
+		}
+	}
+	document.getElementById("PromoptDemo").innerHTML = Message;
+}
+
+</SCRIPT>
+</HEAD>
+
+<BODY>
+<P id="txt";> </P>
+<FORM NAME="MyForm" METHOD="get" OnSubmit="Validate()">
+Enter Your Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<INPUT TYPE="text" NAME="First_Name">
+<INPUT TYPE="Submit" VALUE="Submit"> <BR><BR>
+Enter the Name of Your City : <INPUT TYPE="TEXT" NAME="city" onBlur="ShowPrommptBox()">
+<P ID="PromoptDemo"> </P>
+
+<INPUT TYPE="TEXT" NAME="OPERAND1"> &nbsp; <INPUT TYPE="TEXT" NAME="OPERAND2"> = <INPUT TYPE="TEXT" NAME="ANSWER1">
+<BUTTON ONCLICK="ShowConfirmBox()"> Compute </BUTTON>
+</FORM>
+Answer = <P ID="TxtFromConfirmBox"></P>
+
+<SCRIPT TYPE="TEXT/JAVASCRIPT">  // Inline JacaScript for Confirm Box
+function ShowConfirmBox()
+{
+var MessageForConfirmBox;
+if(confirm("Do You Want to Compute?"))
+{
+var ans;
+	ans=document.MyForm.OPERAND1.value * document.MyForm.OPERAND2.value;
+document.getElementById("TxtFromConfirmBox").innerHTML = ans;
+document.getElementById("ANSWER1").innerHTML = ans;
+}
+}
+</script> 
+</BODY>
+</HTML>

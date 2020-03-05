@@ -1,0 +1,34 @@
+<html>
+<title> CLOCK</title>
+<head>
+
+
+
+</head>
+<body>
+<p id="cdis1"> </p>
+<script type="text/javascript">
+	//write both div/p and script function in single block either under head or body
+	function showTime(){
+			var date= new Date();
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+	
+		if(h>12)
+		h=h-12;
+	var time = h + ":" + m + ":" + s +" " ;
+	document.getElementById("cdis1").innerHTML=time;
+	
+	
+	}
+
+	showTime();
+	setTimeout(showTime,1000);
+
+</script>
+
+
+
+</body>
+</html>

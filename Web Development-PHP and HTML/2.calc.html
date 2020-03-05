@@ -1,0 +1,52 @@
+
+<html>
+<head>
+    <style> 
+    
+    body{
+        text-align: center;
+        background-image: linear-gradient(lightblue,darkblue);
+        height: 100%;
+    }
+    
+    </style>
+	<title>Simple Calculator</title>
+    <script type="text/javascript" src="q2.js">
+    // function dis(x){
+	//frm.txt.value += x;  } // basically appends value to the text box referered using form name and the text box name
+    
+    
+    </script>
+	
+</head>
+<body >
+	<h1>Simple Calculator</h1>
+	<form name="frm">
+		<input type="text" name="txt" ><br><br>
+		<input type="button" name="btn7" value="7" onclick="dis(7)">
+		<input type="button" name="btn8" value="8" onclick="dis(8)">
+		<input type="button" name="btn9" value="9" onclick="dis(9)">
+		<input type="button" name="btnp" value="+" onclick="dis('+')"> <br><br>
+
+		<input type="button" name="btn4" value="4" onclick="dis(btn4.value)">
+		<input type="button" name="btn5" value="5" onclick="dis(btn5.value)">
+		<input type="button" name="btn6" value="6" onclick="dis(btn6.value)">
+		<input type="button" name="btnm" value="-" onclick="dis(btnm.value)"><br><br>
+
+		<input type="button" name="btn1" value="1" onclick="dis(btn1.value)">
+		<input type="button" name="btn2" value="2" onclick="dis(btn2.value)">
+		<input type="button" name="btn3" value="3" onclick="dis(btn3.value)">
+		<input type="button" name="btnmul" value="*" onclick="dis(btnmul.value)"><br><br>
+
+		<input type="button" name="btndot" value="." onclick="dis('.')">
+		<input type="button" name="btn0" value="0" onclick="dis(btn0.value)">
+		<input type="button" name="btneq" value="=" onclick="txt.value=eval(txt.value)"> <!-- predefined function-->
+		<input type="button" name="btnd" value="/" onclick="dis(btnd.value)"> <br><br>
+        
+
+        <input type="reset" name="RESET" value="RESETTT!">
+		
+		
+	</form>
+</body>
+</html>

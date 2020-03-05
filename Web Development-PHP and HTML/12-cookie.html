@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Greetings</title>
+   		<script>
+       
+            function setCookie(){
+                if(document.getElementById("Name").value == ""){
+                    alert("Enter Name");
+                    return;
+                }
+                cookie = escape(document.getElementById("Name").value) + ";";
+                document.cookie = "Name="+cookie;
+                var allcookies = document.cookie;
+                document.write("Cookie set: "+cookie);
+            }
+        
+        </script>
+    </head>
+    <body>
+        
+        <input type="text" placeholder="Your Name" id="Name" required/>
+        <input type="button" value="submit" id="greet" onclick="setCookie()"/>
+        
+    </body>
+</html>

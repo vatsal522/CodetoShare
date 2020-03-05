@@ -1,0 +1,29 @@
+<html>
+<title> name with day time</title>
+<head> 
+<script>
+function sb(){
+			var str = document.getElementById('name').value;
+
+			var date = new Date();
+			var day = date.getDay();
+
+			var dayarray =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+
+			var h = date.getHours();
+			var m = date.getMinutes();
+			var s = date.getSeconds();
+			if(h==0){h=12;	}
+			document.getElementById('greet').innerHTML ="Welcome "+ str + " " + dayarray[day] + " "+ h+":"+m+" :"+s ;			
+          }
+	
+
+</script>
+</head>
+<body>
+Enter name:<input type="text" id="name" required >
+<input type="submit" onclick="sb()" value="submit to proceed">
+<div id="greet"> </div> <br>
+
+</body>
+</html>

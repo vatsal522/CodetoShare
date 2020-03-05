@@ -1,0 +1,39 @@
+<html>
+<title> TOGGLE </title>
+<head>
+<style>
+#flip,#toggle{
+	padding:10px;
+	background-color: yellow;
+	text-align:center;
+	border: solid 2px black;
+}
+#panel{
+	padding:50px;	
+	background-color: yellow;
+	text-align:center;
+	border: solid 2px black;
+	display:none;
+}
+</style>
+<script  src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+			  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+
+	$("#flip").click(function(){
+	$("#panel").slideDown("slow");
+	})
+	
+	$("#toggle").click(function(){
+	$("#toggle").slideToggle("slow");
+	})
+})
+</script>
+</head>
+<body>
+<div id="flip" >CLICK TO SLIDE DOWN</div>
+<div id="panel" >HELLO BROZZZ</div>
+<div id="toggle" >TRY TO TOGGLE</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<title>
+    CALCULATOR
+</title>
+<head>
+    <script>
+/* <script type="text/javascript" src="path-to-javascript-file.js">  <script> to use external JAVASCRIPT*/ 
+//NOTE: SAVE FILE IN .JS
+function Add()
+{
+        n1 = document.getElementById("num1").value;
+        n2 = document.getElementById("num2").value;
+        document.getElementById("result").innerHTML = +n1 + +n2; // if we write just n1+n2, it'll concatenate the values
+}
+    
+    
+    function Multiply()
+{
+        n1 = document.getElementById("num1").value;
+        n2 = document.getElementById("num2").value;
+        document.getElementById("result").innerHTML = n1 * n2;
+}
+
+function Subtract()
+{
+        n1 = document.getElementById("num1").value;
+        n2 = document.getElementById("num2").value;
+        document.getElementById("result").innerHTML = n1 - n2;
+}
+    
+function Divide()
+{
+        n1 = document.getElementById("num1").value;
+        n2 = document.getElementById("num2").value;
+        document.getElementById("result").innerHTML = n1 / n2;
+}
+    
+
+
+    
+    
+    </script>
+    <style>
+        
+        #hello{
+            color:black;
+            text-align: center;
+            background-image: linear-gradient(lightblue,darkblue);
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body id="hello">
+<br><br><br>
+
+ENTER FIRST NUMBER: <input type="number" id="num1" required> <br><br>
+ENTER SECOND NUMBER: <input type="number" id="num2" required> <br><br>
+<br><br>
+<input type="button" onclick="Add() " value="Add">   
+<input type="button" onclick="Subtract()" value="Subtract">  <br><br>
+<input type="button" onclick="Multiply()" value="Multiply">  
+<input type="button" onclick="Divide()" value="Divide">  <br>
+
+<br><br><br>
+
+<p>The Result is : <br>
+    <div id = "result"></div> <!-- this basically works as a empty place and is called using id='result' I THINK.-->
+    </p>
+
+
+</body>
+
+
+
+</html>

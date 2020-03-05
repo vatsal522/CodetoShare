@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+ {
+
+	int a = 10, b = 20, c,ch;
+	clrscr();
+	printf("Enter a choice: 1. add 2. sub 3. mul 4. div");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+
+
+	case 1:
+
+			asm mov ax,a;
+
+			asm mov bx,b;
+
+			asm add ax,bx;
+
+			asm mov c,ax ;
+		printf("c= %d",c);
+		break;
+	case 2:
+			asm mov ax,a;
+			asm mov bx,b;
+
+			asm sub ax,bx;
+
+			asm mov c,ax;
+
+
+		printf("c= %d",c);
+		break;
+	case 3:
+
+			asm mov ax,a;
+			asm mov bx,b;
+			asm mul bx;
+			asm mov c,ax;
+
+		printf("c=%d",c);
+		break;
+	case 4 :
+
+			asm mov ax,a;
+			asm mov bx,b;
+			asm	div bx;
+			asm mov c,ax;
+
+		printf("c=%d",c);
+		break;
+
+		default:printf("Enter a valid input");
+	}
+
+	getch();
+}

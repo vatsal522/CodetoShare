@@ -1,0 +1,24 @@
+<html>
+<title> set and read cookie</title>
+<head></head>
+<body onload="readcookie();">
+	<div id="cookiewillbeshownhere"></div>
+	<form name="nameform">
+		<input type="text" id="name">
+		<input type="submit" value="Set Cookie" onclick="return setCookieFunc();">
+	</form>
+	<script>
+		function readcookie()
+		{
+			document.getElementById("cookiewillbeshownhere").innerHTML=document.cookie;
+		}
+		
+		function setCookieFunc()
+		{
+			document.cookie="Cookie name: "+document.getElementById("name").value;
+			document.getElementById("cookiewillbeshownhere").innerHTML="Reload the browser to get a surprise!";
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head> 
+<title> Timing Events </title>
+
+<script type="text/javascript">
+
+function changeColor()
+{
+var colors = ["red" , "black" , "green" , "blue" , "yellow" , "pink" , "magenta" , "purple" , "cyan" , "LightGray"];
+var i = Math.random();
+i = i*10;
+i = Math.round(i);
+//document.write("i=",+i);
+//document.write("<br>");
+document.body.style.background = colors[i];
+var c = setTimeout(changeColor, 1000); // delay is in milliseconds
+//return;
+//changeColor();
+}
+</script>
+
+</head> 
+
+<body onload = "changeColor()">
+ 
+</body>
+</html>
