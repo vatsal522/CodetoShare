@@ -1,0 +1,103 @@
+   
+cipher = ""
+key =[['T','U','O','R','I'],['A','L','S','B','C'],['D','E','F','G','H'],['K','M','N','P','Q'],['V','W','X','Y','Z']]
+inputtext = input("Enter the message        :")
+for l in range(0,10):
+    if(len(inputtext)<(l*l)):
+        break
+index = 0
+inputArray = []
+temp = [] 
+for i in range(0,l):
+    temp = []
+    for j in range(0,l):
+        if(index<len(inputtext)):
+            temp.append(inputtext[index])
+            index+=1
+        else:
+            temp.append(0)
+    inputArray.append(temp)
+print(inputArray)
+transposedstring = ""
+for i in range(0,l):
+    for j in range(0,l):
+        transposedstring+=str(inputArray[j][i])
+print(transposedstring)
+inputtext=transposedstring
+groups=[]
+temp =[]
+for i in range(0,len(inputtext),2):
+        temp.append(inputtext[i])
+        if(i+1<len(inputtext)):
+            temp.append(inputtext[i+1])    
+        groups.append(temp)
+        temp = []
+print(groups)
+firstrow = 0
+secondrow = 0
+firstcol =0
+secondcol=0
+for group in groups:
+    if(len(group)==1):
+        group.append('Z')  
+    first = group[0]
+    second = group[1]
+    for i in range(0,len(key)):
+        for j in range(0,len(key[0])):
+            if(key[i][j] == first):
+                firstrow = i 
+                firstcol = j
+            if(key[i][j] == second):
+                secondrow = i 
+                secondcol = j
+    print(first+" AT "+str(firstrow)+","+str(firstcol))
+    print(second+" AT "+str(secondrow)+","+str(secondcol))
+    if(firstrow == secondrow):
+        cipher+=key[firstrow][(firstcol+1)%5]+key[secondrow][(secondcol+1)%5]
+    else:
+        if(firstcol == secondcol):
+            cipher+=key[(firstrow+1)%5][firstcol]+key[(secondrow+1)%5][secondcol]
+        else:
+            cipher+=key[firstrow][secondcol]+key[secondrow][firstcol]
+    
+print(cipher)
+
+'''  ----------------------OUPUT----------------------
+Enter the message        :HIDEMONEY
+[['H', 'I'], ['D', 'E'], ['M', 'O'], ['N', 'E'], ['Y']]
+H AT 2,4
+I AT 0,4
+D AT 2,0
+E AT 2,1
+M AT 3,1
+O AT 0,2
+N AT 3,2
+E AT 2,1
+Y AT 4,3
+Z AT 4,4
+QCEFNUMFZV
+
+
+Enter the message        :HIDEMONEY
+[['H', 'I', 'D', 'E'], ['M', 'O', 'N', 'E'], ['Y', 0, 0, 0], [0, 0, 0, 0]]
+HMY0IO00DN00EE00
+[['H', 'M'], ['Y', '0'], ['I', 'O'], ['0', '0'], ['D', 'N'], ['0', '0'], ['E', 'E'], ['0', '0']]
+H AT 2,4
+M AT 3,1
+Y AT 4,3
+0 AT 3,1
+I AT 0,4
+O AT 0,2
+0 AT 0,4
+0 AT 0,2
+D AT 2,0
+N AT 3,2
+0 AT 2,0
+0 AT 3,2
+E AT 2,1
+E AT 2,1
+0 AT 2,1
+0 AT 2,1
+EQWPTRTRFKFKFFFF
+
+'''
